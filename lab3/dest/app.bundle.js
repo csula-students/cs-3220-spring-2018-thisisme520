@@ -739,6 +739,10 @@ function reducer(state, action) {
 		case 'EXAMPLE_MUTATION':
 			state.example = action.payload;
 			return state;
+		case 'BUY_GENERATOR':
+			state.counter++;
+			return state;
+
 		default:
 			return state;
 	}
@@ -746,28 +750,9 @@ function reducer(state, action) {
 
 /***/ }),
 /* 7 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-
-exports.default = function (store) {
-	return class ButtonComponent extends window.HTMLElement {
-		constructor() {
-			super();
-			this.store = store;
-
-			this.onStateChange = this.handleStateChange.bind(this);
-
-			// TODO: add click event to increment counter
-			// hint: use "store.dispatch" method (see example component)
-		}
-	};
-};
+throw new Error("Module build failed: SyntaxError: C:/Users/yi-laptop/Desktop/123/cs-3220-spring-2018-thisisme520/lab3/client/src/views/button.js: Unexpected token, expected ; (11:30)\n\n   9 | \t\t\tthis.onStateChange = this.handleStateChange.bind(this);\n  10 | \n> 11 | \t\t\thandleStateChange(newState){\n     | \t\t\t                           ^\n  12 | \t\t\t\tthis.textContent = newState.button;\n  13 | \t\t\t}\n  14 | \t\t\t\n");
 
 /***/ }),
 /* 8 */
@@ -786,6 +771,7 @@ exports.default = function (store) {
 			super();
 			this.store = store;
 			// TODO: render counter inner HTML based on the store state
+			this.textContent = this.store.state.counter;
 
 			this.onStateChange = this.handleStateChange.bind(this);
 		}
@@ -793,9 +779,11 @@ exports.default = function (store) {
 		handleStateChange(newState) {
 			console.log('CounterComponent#stateChange', this, newState);
 			// TODO: update inner HTML based on the new state
+			this.innerHTML = 'counter: ${newState.counter}';
 		}
 
 		connectedCallback() {
+			this.innerHTML = 'counter: 0';
 			this.store.subscribe(this.onStateChange);
 		}
 
