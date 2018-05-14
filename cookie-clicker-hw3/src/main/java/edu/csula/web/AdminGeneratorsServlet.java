@@ -23,67 +23,9 @@ public class AdminGeneratorsServlet extends HttpServlet {
       GeneratorsDAO dao = new GeneratorsDAOImpl(getServletContext());
 		Collection<Generator> gen = dao.getAll();
       
-         out.println("<!DOCTYPE html>");
-			out.println("<html>");
-			out.println("<head>");
-			out.println("<meta charset=\"UTF-8\">");
-			out.println("<title>Incremental Game</title>");
-			out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../app.css \">");
-			out.println("</head>");
-
-			out.println("<body>");
-			out.println("<h1>Incremental Game Framework</h1>");
-			out.println("<body>");
-			out.println("<a href=/admin/information>Information</a>");
-			out.println(" | ");
-			out.println("<a href=/admin/events>Events</a>");
-			out.println(" | ");
-			out.println("<a href=/admin/generators>Generators</a>");
-			out.println("</body>");
-
-
-			out.println("<form method=\"POST\">");
-			out.println("<label for=\"generatorname\">Generator Name</label><br>");
-			out.println("<input type=\"text\" name=\"name\" id=\"generatorname\"><br>");
-			out.println("<label for=\"generatorrate\">Generator Rate</label><br>");
-			out.println("<input type=\"number\" name=\"rate\" id=\"generatorrate\"><br>");
-			out.println("<label for=\"basecost\">Base Cost</label><br>");
-			out.println("<input type=\"number\" name=\"cost\" id=\"basecost\"><br>");
-			out.println("<label for=\"unlockat\">Unlock at</label><br>");
-			out.println("<input type=\"number\" name=\"unlock\" id=\"unlockat\"><br>");
-			out.println("<label for=\"generatorDescription\">Event Description</label><br>");
-			out.println("<textarea name=\"description\" id=\"generatorDescription\"></textarea><br>");
-			out.println("<button>Add{edit}</button>");
-			out.println("</form>");
-
-			out.println("<table>");
-			out.println("<tr>");
-			out.println("<th>Name</th>");
-			out.println("<th>Rate</th>");
-			out.println("<th>Cost</th>");
-			out.println("<th>Unlock At</th>");
-			out.println("<th>Description</th>");
-			out.println("<th>Action</th>");
-			out.println("</tr>");
-			for (Generator generator : gen) {
-				out.println("<tr>");
-				out.println("<td>" + generator.getName() + "</td>");
-				out.println("<td>" + generator.getRate() + "</td>");
-				out.println("<td>" + generator.getBaseCost() + "</td>");
-				out.println("<td>" + generator.getUnlockAt() + "</td>");
-				out.println("<td>" + generator.getDescription() + "</td>");
-				out.println("<td>");
-				out.println("<a href=\"EditGeneratorServlet?id=" + generator.getId() +"\">Edit</a>");
-				out.println("|");
-				out.println("<a href=\"DeleteGeneratorServlet?id=" + generator.getId() + "\">delete</a>");
-				out.println("</td>");
-				out.println("</tr>");
-			}
-			out.println("</table>");
-
-			out.println("</body>");
-			out.println("</html>");
-		}
+		request.setAttribute("generatorEntries", generators);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/admin-generator.jsp");
+		  rd.forward(request, response);
 
 	@Override
 	public void doPost( HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

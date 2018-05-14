@@ -21,27 +21,8 @@ public class AuthenticationServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		// TODO: render the authentication page HTML
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<meta charset=\"UTF-8\">");
-		out.println("<title>Homeworktwo</title>");
-		out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"../app.css \">");
-		out.println("</head>");
-
-		out.println("<body>");
-		out.println("<h1>Incremental Game Framework</h1>");
-
-		out.println("<form method=\"POST\">");
-		out.println("<label for=\"username\">Username: </label><br>");
-		out.println("<input type=\"text\"  id=\"username\"><br>");
-		out.println("<label for=\"password\">Password: </label><br>");
-		out.println("<input type=\"password\" id=\"password\"><br>");
-		out.println("<input type=\"submit\" value=\"Log in\">");
-		out.println("<button>Log in</button>");
-		out.println("</form>");
-		out.println("</body>");
-		out.println("</html>");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/admin-authentication.jsp");
+		  rd.forward(request, response);
 	}
 
 	@Override
