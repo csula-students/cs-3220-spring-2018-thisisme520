@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.csula.storage.mysql.EventsDAOImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-05-13T06:48:58" hostname="DESKTOP-B5CNPKR" time="1.113">
+<testsuite name="edu.csula.storage.mysql.EventsDAOImplTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-05-16T00:29:07" hostname="DESKTOP-B5CNPKR" time="0.965">
   <properties/>
-  <testcase name="getAll" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.878"/>
-  <testcase name="getById" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.213"/>
-  <testcase name="add" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.017"/>
-  <testcase name="set" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.002"/>
+  <testcase name="getAll" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.846"/>
+  <testcase name="getById" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.105"/>
+  <testcase name="add" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.012"/>
+  <testcase name="set" classname="edu.csula.storage.mysql.EventsDAOImplTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
