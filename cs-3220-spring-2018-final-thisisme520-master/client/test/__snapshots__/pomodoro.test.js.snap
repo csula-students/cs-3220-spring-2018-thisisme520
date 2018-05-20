@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pomodoro Timer Component should be able to render default pomodoro timer to be 15 minutes 1`] = `
+
+<pomodoro-timer>
+  <div class="timer">
+    Timer: 15:00
+  </div>
+</pomodoro-timer>
+
+`;
+
+exports[`Pomodoro Timer Component should be able to render default pomodoro timer to be 15 seconds 1`] = `
+
+<pomodoro-timer>
+  <div class="timer">
+    Timer: 00:15
+  </div>
+</pomodoro-timer>
+
+`;

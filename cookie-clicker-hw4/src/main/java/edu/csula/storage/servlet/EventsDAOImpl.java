@@ -44,7 +44,7 @@ public class EventsDAOImpl implements EventsDAO {
       if (events ==null){
          return new ArrayList<>();
          }
-         return (ArrayList<Event>) events;
+         return (ArrayList<Eve>) events;
 	}
    
 
